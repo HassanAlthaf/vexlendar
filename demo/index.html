@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>vexlendar</title>
+
+        <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/demo/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="col-md-8">
+                <div id="calendar"></div>
+
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <div class="calendar-controls">
+                            <button id="previous-month" class="btn btn-default control">Previous Month</button>
+                            <span id="month-year-indicator"></span>
+                            <button id="next-month" class="btn btn-default control">Next Month</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="../dist/vexlendar.min.js"></script>
+        <script type="text/javascript">
+
+            function statusChange(e) {
+                this.style.backgroundColor = "#FF0000";
+                this.style.color = "#FFFFFF";
+            }
+
+            function populateData(element, date) {
+                let container = document.createElement('div');
+
+                let field = document.createElement('select');
+                field.setAttribute('name', 'status-' + date);
+                field.classList.add('form-control');
+                field.classList.add('select-status');
+
+
+                let defaultOption = document.createElement('option');
+                defaultOption.innerText = "Set Status";
+
+                let firstOption = document.createElement('option');
+                firstOption.setAttribute('value', '1');
+                firstOption.innerText = "First Option";
+
+                let secondOption = document.createElement('option');
+                secondOption.setAttribute('value', '2');
+                secondOption.innerText = "second Option";
+
+                let thirdOption = document.createElement('option');
+                thirdOption.setAttribute('value', '3');
+                thirdOption.innerText = "Third Option";
+
+                let statusOptions = [defaultOption, firstOption, secondOption, thirdOption];
+
+                for (let i = 0; i < statusOptions.length; i++) {
+                    field.append(statusOptions[i]);
+                }
+
+                let dateLabel = document.createElement('span');
+                dateLabel.innerText = date;
+
+                field.addEventListener('change', this.statusChange);
+
+                container.append(dateLabel);
+                container.append(field);
+
+                element.append(container);
+            }
+
+            let calendar = vexlender(
+                document.getElementById('calendar'),
+                {
+                    monthYearIndicator: document.getElementById('month-year-indicator'),
+                    dateRenderer: function (element, date, month, year) {
+                        this.populateData(element, date);
+                    },
+                    dateNodeClick: function (e, day, month, year) {
+
+                    }
+                }
+            );
+
+            document.getElementById('previous-month').addEventListener('click', function (e) {
+                calendar.previousMonth();
+            });
+
+            document.getElementById('next-month').addEventListener('click', function (e) {
+                calendar.nextMonth();
+            });
+        </script>
+    </body>
+</html>

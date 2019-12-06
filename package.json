@@ -1,0 +1,36 @@
+{
+  "name": "vexlendar",
+  "version": "0.1.0",
+  "description": "A simple JS calendar application.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HassanAlthaf/vexlendar.git"
+  },
+  "keywords": [
+    "Calendar",
+    "Scheduling",
+    "JavaScript",
+    "CSS"
+  ],
+  "author": "Hassan Althaf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HassanAlthaf/vexlendar/issues"
+  },
+  "homepage": "https://github.com/HassanAlthaf/vexlendar#readme",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0"
+  }
+}
