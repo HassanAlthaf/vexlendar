@@ -14,6 +14,9 @@ Vexlendar is simple and flexible calendar plugin that allows you to implement ca
 
 **Method Two (NPM):** TBA
 
+1. Installation Command: `npm i @hassanalthaf/vexlendar`
+2. Include the `/dist/vexlendar.min.js` in the `<script>` within your project.
+
 
 ## Usage
 
