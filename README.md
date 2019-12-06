@@ -1,11 +1,11 @@
-#Vexlendar - A simple calendar plugin.
+# Vexlendar - A simple calendar plugin.
 
 Vexlendar is simple and flexible calendar plugin that allows you to implement calendars to your User Interface.
 
 - [Installation](#installation)
 - [Usage](#usage)
 
-##Installation
+## Installation
 
 **Method One (Manua):** 
 
@@ -15,7 +15,7 @@ Vexlendar is simple and flexible calendar plugin that allows you to implement ca
 **Method Two (NPM):** TBA
 
 
-##Usage
+## Usage
 
 ![Vexlendar](https://image.prntscr.com/image/QiRNaG8rTza4mnYYhNNNEA.png)
 
